@@ -1,7 +1,40 @@
 body {
-    background-color:lightblue;
+    background-color:cornflowerblue;
 }
 
 h1 {
-    color: red;
+    color:rgb(180, 36, 36);
+}
+
+button {
+        background-color: rgb(180, 36, 36);
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+}
+
+button {
+    transition-duration: 0.4s;
+  }
+  
+button:hover {
+    background-color:pink;
+    color: white;
+  }
+
+#countdown {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(180, 36, 36);
+    float: right;
+}
+
+.quiz {
+    border:rgb(180, 36, 36) 3px solid;
+    padding: 10px 40px 40px 40px;
+    background-color: #E5FCE3;
+    width: 50%;
 }

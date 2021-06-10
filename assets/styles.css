@@ -3,13 +3,13 @@ body {
 }
 
 h1 {
-    color:rgb(180, 36, 36);
+    color:white;
     text-align: center;
 }
 
 .buttons {
     padding: 20px;
-    margin-top: 400px;
+    margin-top: 320px;
     position: absolute;
     margin-left: 80px;
 
@@ -61,4 +61,11 @@ button:hover {
     background-color: white;
     margin-left: 100px;
     margin-right: 100px;
+}
+
+#directions {
+    color:rgb(180, 36, 36);
+    font-style: italic;
+    border-bottom:rgb(180, 36, 36) 2px solid;
+    padding-left: 15px;
 }

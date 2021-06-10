@@ -1,43 +1,44 @@
 
 // var nextBtn = document.getElementById('next');
 // var backBtn = document.getElementById('back');
-// var questions = [
 
-// function quiz() {
-//     [
-//     {
-//         question: "what is the capital of USA?", choices: ["ORL", "SEA", "DC", "ATL"], answer: 2
-//     },
 
-//     { 
-//         question: "what is the capital of GA?", choices: ["ORL", "SEA", "DC", "ATL"], answer: 3
-//     },
+function quiz() {
+    [
+    {
+        question: "what is the capital of USA?", choices: ["ORL", "SEA", "DC", "ATL"], answer: 2
+    },
 
-//     {
-//         question: "what's the best animal?", choices: ["dogs", "cats", "frogs", "hippos"], answer: 0
-//     }
-//   ];
+    { 
+        question: "what is the capital of GA?", choices: ["ORL", "SEA", "DC", "ATL"], answer: 3
+    },
 
-//     var container = document.getElementById('container');
+    {
+        question: "what's the best animal?", choices: ["dogs", "cats", "frogs", "hippos"], answer: 0
+    }
+  ];
+
+    var container = document.getElementById('container');
         
-//         for (var i = 0; i < questions.length; i++) 
-//         {
-//             var questionContainer = document.createElement('div');
-//             questionContainer.textContent = questions[i].question;
+        for (var i = 0; i < questions.length; i++) 
+        {
+            var questionContainer = document.createElement('div');
+            questionContainer.textContent = questions[i].question;
 
-//         var options = questions[i].choices;
+        var options = questions[i].choices;
         
-//         for (var opt in options) 
-//         {
-//              //create radiobutton
-//             //append radiobutton to a div 
-//             var radioBtn = document.createElement('radio');
-//             div.appendChild(radioBtn);
+        for (var opt in options) 
+        {
+             //create radiobutton
+            //append radiobutton to a div 
+            var radioBtn = document.createElement('radio');
+            div.appendChild(radioBtn);
         
-//         }
-//       container.appendChild(questionContainer);
-//         }
-// }
+        }
+      container.appendChild(questionContainer);
+        }
+        console.log(quiz);
+}
 
 var submitBtn = document.getElementById('submit');
 
@@ -51,7 +52,7 @@ var startBtn = document.getElementById('start');
 
 //Timer
 function countdown() {
-    var timeLeft = 2;
+    var timeLeft = 12;
   
     // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
     var timeInterval = setInterval(function() { 

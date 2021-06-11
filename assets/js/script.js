@@ -1,44 +1,18 @@
 
-// var nextBtn = document.getElementById('next');
-// var backBtn = document.getElementById('back');
+var nextBtn = document.getElementById('next');
+var backBtn = document.getElementById('back');
+var div = document.getElementById('div');
 
 
-function quiz() {
-    [
-    {
-        question: "what is the capital of USA?", choices: ["ORL", "SEA", "DC", "ATL"], answer: 2
-    },
-
-    { 
-        question: "what is the capital of GA?", choices: ["ORL", "SEA", "DC", "ATL"], answer: 3
-    },
-
-    {
-        question: "what's the best animal?", choices: ["dogs", "cats", "frogs", "hippos"], answer: 0
-    }
+var questions = [
+    { question: "what is the capital of USA?", choices: ["ORL", "SEA", "DC", "ATL"], answer: 2 },
+    { question: "what is the capital of GA?", choices: ["ORL", "SEA", "DC", "ATL"], answer: 3 },
+    { question: "What is a common household pet?", choices: ["dogs", "dragons", "horses", "hippos"], answer: 0 },
   ];
 
-    var container = document.getElementById('container');
-        
-        for (var i = 0; i < questions.length; i++) 
-        {
-            var questionContainer = document.createElement('div');
-            questionContainer.textContent = questions[i].question;
+  var score = 0
+  var container = document.getElementById('container');
 
-        var options = questions[i].choices;
-        
-        for (var opt in options) 
-        {
-             //create radiobutton
-            //append radiobutton to a div 
-            var radioBtn = document.createElement('radio');
-            div.appendChild(radioBtn);
-        
-        }
-      container.appendChild(questionContainer);
-        }
-        console.log(quiz);
-}
 
 var submitBtn = document.getElementById('submit');
 
@@ -49,6 +23,46 @@ function results() {
 var timerEl = document.getElementById('countdown');
 var mainEl = document.getElementById('main');
 var startBtn = document.getElementById('start');
+
+var nextBtn = document.getElementById('next');
+
+ nextBtn.onclick = pageTurning;
+ function pageTurning() {
+     console.log('next')
+
+     
+
+    
+    //  function increment() {
+    //     var x = -1;
+    //     x++
+    //      console.log(x);
+    //  }   
+
+    //  increment()
+
+    //  for (var i = 0; i < questions.length; i++) {
+    //      console.log(i);
+     
+    //          var questionContainer = document.createElement('div');
+    //          questionContainer.textContent = questions[i].question;
+ 
+    //      var options = questions[i].choices;
+         
+    //      for (var opt in options) 
+    //      {
+    //           //create radiobutton
+    //          //append radiobutton to a div 
+    //          var radioBtn = document.createElement('radio');
+    //          div.appendChild(radioBtn);
+         
+    //      }
+    //    container.appendChild(questionContainer);
+    //      }
+ 
+ }
+
+
 
 //Timer
 function countdown() {
@@ -76,7 +90,24 @@ function countdown() {
     }, 1000);
   }
 
-    startBtn.onclick = countdown;
+  function quizStart() {
+      countdown();
+
+      var questionContainer = document.createElement('div');
+      questionContainer.textContent = questions[1].question;
+
+      container.appendChild(questionContainer);
+
+
+  }
+
+  // do a  function like quizNext 
+  // same as above but change index to 2
+  // nextBtn.onclick = quizNext 
+
+  
+
+    startBtn.onclick = quizStart;
 
     //score at the end 
     

@@ -44,7 +44,17 @@ button:hover {
 #countdown {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: rgb(180, 36, 36);
+}
+
+#top-left {
+    display: inline;
+    width: 50%;
+}
+
+#top-right {
+    display: inline;
     float: right;
+    width: 50%;
 }
 
 .quiz {
@@ -68,3 +78,4 @@ button:hover {
     border-bottom:rgb(180, 36, 36) 2px solid;
     padding-left: 15px;
 }
+

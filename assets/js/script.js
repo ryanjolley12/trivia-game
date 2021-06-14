@@ -5,67 +5,33 @@ var div = document.getElementById('div');
 
 
 var questions = [
-    { question: "what is the capital of USA?", choices: ["ORL", "SEA", "DC", "ATL"], answer: 2 },
-    { question: "what is the capital of GA?", choices: ["ORL", "SEA", "DC", "ATL"], answer: 3 },
-    { question: "What is a common household pet?", choices: ["dogs", "dragons", "horses", "hippos"], answer: 0 },
+    { question: "What is the capital of USA?", choices: [" New York", " Dallas", " Atlanta", " Washington, D.C. "], answer: 2 },
+    { question: "What is the capital of GA?", choices: [" ORL", " SEA", " DC", " ATL"], answer: 3 },
+    { question: "What is a common household pet?", choices: [" dogs", " dragons", " horses", " hippos"], answer: 0 },
     { question: "What color are strawberries?", choices: ["red", "blue", "yellow", "green"], answer: 0 },
     { question: "What is 4x3?", choices: ["10", "7", "12", "16"], answer: 0 },
   ];
 
-  var score = 0
+
   var container = document.getElementById('container');
 
 
 var submitBtn = document.getElementById('submit');
 
-function results() {
-    window.alert("Good job! Your score is" + 5);
-}
 
 var timerEl = document.getElementById('countdown');
 var mainEl = document.getElementById('main');
 var startBtn = document.getElementById('start');
 
+//Results 
+var score = 0 
+/*
+var email = localStorage.getItem('email');
+var performance = localStorage.getItem(score); */
 
-var backBtn = document.getElementById('back');
-
- nextBtn.onclick = pageTurning;
- function pageTurning() {
-     console.log('next')
-
-     
-
-    
-    //  function increment() {
-    //     var x = -1;
-    //     x++
-    //      console.log(x);
-    //  }   
-
-    //  increment()
-
-    //  for (var i = 0; i < questions.length; i++) {
-    //      console.log(i);
-     
-    //          var questionContainer = document.createElement('div');
-    //          questionContainer.textContent = questions[i].question;
- 
-    //      var options = questions[i].choices;
-         
-    //      for (var opt in options) 
-    //      {
-    //           //create radiobutton
-    //          //append radiobutton to a div 
-    //          var radioBtn = document.createElement('radio');
-    //          div.appendChild(radioBtn);
-         
-    //      }
-    //    container.appendChild(questionContainer);
-    //      }
- 
- }
-
-
+function results() {
+    window.alert("Good job! Your score is" + score + '/' + questions.length);
+}
 
 
 //Timer
@@ -88,7 +54,10 @@ function countdown() {
       } else {
         // Once `timeLeft` gets to 0, set `timerEl` to an empty string
         timerEl.textContent = '';
-        confirm("You are out of time. Please click submit")
+        confirm("You are out of time. Please click submit");
+        // if (confirm == true) {
+        //     var onSubmit = results
+        // var onSubmit = results 
         // if (confirm==true) {
         //     results() 
         // var confirm = confirm("You are out of time. Please click SUBMIT");
@@ -110,6 +79,11 @@ function countdown() {
 
       container.appendChild(questionContainer);
 
+      var choicesContainer = document.createElement('choices-div');
+      choicesContainer.textContent = questions[0].choices;
+
+      container.appendChild(choicesContainer);
+
 
   }
 
@@ -124,6 +98,11 @@ function countdown() {
         questionContainer.textContent = questions[1].question;
     
         container.appendChild(questionContainer);
+
+        var choicesContainer = document.createElement('choices-div');
+        choicesContainer.textContent = questions[1].choices;
+  
+        container.appendChild(choicesContainer);
     }
 
     else if (clickCounter==2) {
@@ -132,6 +111,11 @@ function countdown() {
         questionContainer.textContent = questions[2].question;
     
         container.appendChild(questionContainer);
+
+        var choicesContainer = document.createElement('choices-div');
+        choicesContainer.textContent = questions[2].choices;
+  
+        container.appendChild(choicesContainer);
     }
 
     else if (clickCounter==3) {
@@ -139,6 +123,11 @@ function countdown() {
         questionContainer.textContent = questions[3].question;
     
         container.appendChild(questionContainer);
+
+        var choicesContainer = document.createElement('choices-div');
+        choicesContainer.textContent = questions[3].choices;
+  
+        container.appendChild(choicesContainer);
     }
 
     else if (clickCounter==4) {
@@ -146,6 +135,11 @@ function countdown() {
         questionContainer.textContent = questions[4].question;
     
         container.appendChild(questionContainer);
+
+        var choicesContainer = document.createElement('choices-div');
+        choicesContainer.textContent = questions[4].choices;
+  
+        container.appendChild(choicesContainer);
     }
 
   };
@@ -161,6 +155,11 @@ function countdown() {
         questionContainer.textContent = questions[3].question;
     
         container.appendChild(questionContainer);
+
+        var choicesContainer = document.createElement('choices-div');
+        choicesContainer.textContent = questions[3].choices;
+  
+        container.appendChild(choicesContainer);
     }
 
     else if (clickBack==2) {
@@ -169,6 +168,11 @@ function countdown() {
         questionContainer.textContent = questions[2].question;
     
         container.appendChild(questionContainer);
+
+        var choicesContainer = document.createElement('choices-div');
+        choicesContainer.textContent = questions[2].choices;
+  
+        container.appendChild(choicesContainer);
     }
 
     else if (clickBack==3) {
@@ -176,6 +180,11 @@ function countdown() {
         questionContainer.textContent = questions[1].question;
     
         container.appendChild(questionContainer);
+
+        var choicesContainer = document.createElement('choices-div');
+        choicesContainer.textContent = questions[1].choices;
+  
+        container.appendChild(choicesContainer);
     }
 
     else if (clickBack==3) {
@@ -183,6 +192,11 @@ function countdown() {
         questionContainer.textContent = questions[0].question;
     
         container.appendChild(questionContainer);
+
+        var choicesContainer = document.createElement('choices-div');
+        choicesContainer.textContent = questions[0].choices;
+  
+        container.appendChild(choicesContainer);
     }
   };
 

@@ -1,3 +1,4 @@
+// I shared my code with my study group and I think some people are using my questions variables and StartBtn functions. 
 
 var nextBtn = document.getElementById('next');
 var backBtn = document.getElementById('back');
@@ -5,13 +6,45 @@ var div = document.getElementById('div');
 
 
 var questions = [
-    { question: "What is the capital of USA?", choices: [" New York", " Dallas", " Atlanta", " Washington, D.C. "], answer: 2 },
-    { question: "What is the capital of GA?", choices: [" ORL", " SEA", " DC", " ATL"], answer: 3 },
-    { question: "What is a common household pet?", choices: [" dogs", " dragons", " horses", " hippos"], answer: 0 },
-    { question: "What color are strawberries?", choices: ["red", "blue", "yellow", "green"], answer: 0 },
-    { question: "What is 4x3?", choices: ["10", "7", "12", "16"], answer: 0 },
+    { question: "1. What is the capital of USA?", 
+          choices: 
+              [" a. New York", 
+              " b. Dallas", 
+              " c. Atlanta", 
+              " d. Washington, D.C. "], 
+          answer: 2 },
+    { question: "2. What is the capital of GA?", 
+          choices: 
+             [" a. ORL", 
+              " b. SEA", 
+              " c. DC", 
+              " d. ATL"], 
+          answer: 3 },
+    { question: "3. What is a common household pet?", 
+          choices: 
+              [" a. dogs", 
+              " b. dragons", 
+              " c. horses", 
+              " d. hippos"], 
+          answer: 0 },
+    { question: "4. What color are strawberries?", 
+          choices: 
+              [" a. red", 
+              " b. blue", 
+              " c. yellow", 
+              "d. green"], 
+          answer: 0 },
+    { question: "5. What is 4x3?", 
+          choices: 
+              [" a. TEN ", 
+              " b. SEVEN ", 
+              " c. TWELVE ", 
+              " d. SIXTEEN "], 
+          answer: 0 },
   ];
 
+  // var answerLetters = ["a","b","c","d"];
+  // for (i +)
 
   var container = document.getElementById('container');
 
@@ -210,3 +243,38 @@ function countdown() {
     // nextBtn.onclick = quizNext;
 
   
+
+    /*
+    var score = 0;
+var userAnswer = "";
+var questionBox = document.getElementById('questions');
+var aSelection = document.getElementById('aButton');
+var bSelection = document.getElementById('bButton');
+var cSelection = document.getElementById('cButton');
+var dSelection = document.getElementById('dButton');
+​
+var soundCorrect = "";
+var soundWrong = "";
+​
+​
+displayQuestion = function (){ //var startScreen hide, call timer, call getQuestion. no other logic in playGame- else goes into displYQuestion or compareAnswers
+     //have start button that playGame(); and is hidden afterwards 
+​
+   var questionNumber = 0;
+   if (questionNumber < questions.length){
+       var currentQuestion = document.createElement('h3');
+       currentQuestion.classList.add('mybuttons') 
+       currentQuestion.textContent = questions[questionNumber].q;
+       questionBox.appendChild(currentQuestion);
+​
+       for(i = 0; i < questions[i].a.length; i++){
+           var answerChoices = document.createElement('button');
+           answerChoices.classList.add('btn-success', 'btn', 'button')  //get button id's/value taskinator module edit and delete id's?
+           answerChoices.setAttribute("id", (i + 1));  //asigns unique ID to each button 
+           answerChoices.innerHTML = ((i+1) + ". " + questions[questionNumber].a[i]);
+           currentQuestion.appendChild(answerChoices);
+           console.log(questionNumber);
+           console.log(i);
+       }
+   }
+​*/

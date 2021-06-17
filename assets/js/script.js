@@ -3,69 +3,55 @@
 var nextBtn = document.getElementById('next');
 var backBtn = document.getElementById('back');
 var div = document.getElementById('div');
-
-
-var questions = [
-    { question: "1. What is the capital of USA?", 
-          choices: 
-              [" a. New York", 
-              " b. Dallas", 
-              " c. Atlanta", 
-              " d. Washington, D.C. "], 
-          answer: 2 },
-    { question: "2. What is the capital of GA?", 
-          choices: 
-             [" a. ORL", 
-              " b. SEA", 
-              " c. DC", 
-              " d. ATL"], 
-          answer: 3 },
-    { question: "3. What is a common household pet?", 
-          choices: 
-              [" a. dogs", 
-              " b. dragons", 
-              " c. horses", 
-              " d. hippos"], 
-          answer: 0 },
-    { question: "4. What color are strawberries?", 
-          choices: 
-              [" a. red", 
-              " b. blue", 
-              " c. yellow", 
-              "d. green"], 
-          answer: 0 },
-    { question: "5. What is 4x3?", 
-          choices: 
-              [" a. TEN ", 
-              " b. SEVEN ", 
-              " c. TWELVE ", 
-              " d. SIXTEEN "], 
-          answer: 0 },
-  ];
-
-  // var answerLetters = ["a","b","c","d"];
-  // for (i +)
-
-  var container = document.getElementById('container');
-
+var container = document.getElementById('container');
+var playAgainBtn = document.getElementById("pa");
 
 var submitBtn = document.getElementById('submit');
-
 
 var timerEl = document.getElementById('countdown');
 var mainEl = document.getElementById('main');
 var startBtn = document.getElementById('start');
 
-//Results 
-var score = 0 
-/*
-var email = localStorage.getItem('email');
-var performance = localStorage.getItem(score); */
+var clickCounter=0;
+var nextBtn = document.getElementById('next');
 
-function results() {
-    window.alert("Good job! Your score is" + score + '/' + questions.length);
-}
-
+var questions = [
+    { question: "1. What is the capital of USA?", 
+          choices: 
+              [" New York", 
+              " Dallas", 
+              " Atlanta", 
+              " Washington, D.C."],
+          answer: "Washington, D.C." },
+    { question: "2. What is the capital of GA?", 
+          choices: 
+             [" ORL", 
+              " SEA", 
+              " DC", 
+              " ATL"], 
+          answer: "DC" },
+    { question: "3. What is a common household pet?", 
+          choices: 
+              [" dogs", 
+              " dragons", 
+              " horses", 
+              " hippos"], 
+          answer: "dogs" },
+    { question: "4. What color are strawberries?", 
+          choices: 
+              [" red", 
+              " blue", 
+              " yellow", 
+              "green"], 
+          answer: "red" },
+    { question: "5. What is 4x3?", 
+          choices: 
+              [" TEN ", 
+              " SEVEN ", 
+              " TWELVE ", 
+              " SIXTEEN "], 
+          answer: "TEN" },
+  ];
 
 //Timer
 function countdown() {
@@ -104,6 +90,14 @@ function countdown() {
     }, 1000);
   }
 
+  container.addEventListener("click", function (e) {
+    e.preventDefault();
+    if (e.target.matches("h4")) {
+      var chosenAnser = e.target.getAttribute("data-value");
+      compareAnswers(chosenAnswer);
+    }
+  });
+
   function quizStart() {
       countdown();
 
@@ -117,11 +111,7 @@ function countdown() {
 
       container.appendChild(choicesContainer);
 
-
   }
-
-  var clickCounter=0;
-  var nextBtn = document.getElementById('next');
 
   nextBtn.onclick= function() {
     clickCounter++;
@@ -240,41 +230,13 @@ function countdown() {
     
     submitBtn.onclick = results; 
 
-    // nextBtn.onclick = quizNext;
 
-  
+//Results 
+var score = 0 
 
-    /*
-    var score = 0;
-var userAnswer = "";
-var questionBox = document.getElementById('questions');
-var aSelection = document.getElementById('aButton');
-var bSelection = document.getElementById('bButton');
-var cSelection = document.getElementById('cButton');
-var dSelection = document.getElementById('dButton');
-​
-var soundCorrect = "";
-var soundWrong = "";
-​
-​
-displayQuestion = function (){ //var startScreen hide, call timer, call getQuestion. no other logic in playGame- else goes into displYQuestion or compareAnswers
-     //have start button that playGame(); and is hidden afterwards 
-​
-   var questionNumber = 0;
-   if (questionNumber < questions.length){
-       var currentQuestion = document.createElement('h3');
-       currentQuestion.classList.add('mybuttons') 
-       currentQuestion.textContent = questions[questionNumber].q;
-       questionBox.appendChild(currentQuestion);
-​
-       for(i = 0; i < questions[i].a.length; i++){
-           var answerChoices = document.createElement('button');
-           answerChoices.classList.add('btn-success', 'btn', 'button')  //get button id's/value taskinator module edit and delete id's?
-           answerChoices.setAttribute("id", (i + 1));  //asigns unique ID to each button 
-           answerChoices.innerHTML = ((i+1) + ". " + questions[questionNumber].a[i]);
-           currentQuestion.appendChild(answerChoices);
-           console.log(questionNumber);
-           console.log(i);
-       }
-   }
-​*/
+function results() {
+    window.alert("Good job! Your score is" + score + '/' + questions.length);
+    window.confirm("Play again?")
+    confirm.onclick = quizStart
+    preventDefault();
+}
